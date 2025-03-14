@@ -14,5 +14,3 @@ function changeBodyAndTextColor() {
   document.body.style.backgroundColor = randColor;
   textColor.textContent = randColor;
 }
-
-// style="background-color: ;
