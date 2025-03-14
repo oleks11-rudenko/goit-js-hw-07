@@ -27,9 +27,18 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-const renderMarkup = images.forEach((element) => {
-  gallery.insertAdjacentHTML(
-    "beforeend",
-    `<li class="gallery-item"><img class="gallery-img" src="${element.url}" alt="${element.alt}"></li>`
-  );
-});
+function createImageCards(images) {
+  return images
+    .map((car) => {
+      return `<li class="gallery-item">
+         <img class="gallery-img" src="${car.url}" alt="${car.alt}">
+       </li>`;
+    })
+    .join("");
+}
+
+function renderMarkup(element, markup) {
+  element.insertAdjacentHTML("beforeend", markup);
+}
+
+renderMarkup(gallery, createImageCards(images));
