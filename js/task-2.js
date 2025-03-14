@@ -27,9 +27,9 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-const res = images.forEach((element) => {
+const renderMarkup = images.forEach((element) => {
   gallery.insertAdjacentHTML(
-    "afterbegin",
+    "beforeend",
     `<li class="gallery-item"><img class="gallery-img" src="${element.url}" alt="${element.alt}"></li>`
   );
 });
